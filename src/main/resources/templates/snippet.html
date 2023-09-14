@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Snippet Page</title>
+    <link rel="stylesheet" th:href="@{/css/prism.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <style>
+        html, body {
+            background-color: #111827 !important;
+            color: #D1D5DB;
+            margin-top: 0;
+            padding: 20px 0;
+            min-height: 100vh;
+        }
+        .snippet-container {
+            padding: 0;
+            text-align: center;
+        }
+
+        .mockup-code {
+            margin-bottom: 20px;
+            margin-top: 1px;
+        }
+
+        #timer {
+            font-size: 2rem;
+            font-weight: bold;
+
+        }
+
+        #header-block {
+            margin-top: 0px;
+            margin-bottom: 1px;
+        }
+    </style>
+</head>
+<body>
+<script th:src="@{/js/prism.js}">
+</script>
+<div id="header-block" class="text-center mt-4">
+    <p class="text-lg">This snippet will self-destruct after</p>
+    <div id="timer" class="text-2xl font-bold"><span th:text="${timeLeft}"></span></div>
+</div>
+<div class="snippet-container">
+<div class="flex justify-center items-center h-screen">
+<div class="mockup-code">
+        <pre class="text-center">
+            <code th:attr="class='language-' + ${snippet.getExtension()}" th:text="${snippet.getText()}">
+            </code>
+        </pre>
+</div>
+</div>
+</div>
+</body>
+</html>

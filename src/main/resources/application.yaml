@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://wienfolio:R3HQYIyvVorEENcg@cluster0.zkiwqho.mongodb.net/?retryWrites=true&w=majority
+      database: nub
