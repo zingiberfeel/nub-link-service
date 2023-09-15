@@ -49,7 +49,7 @@ public class RabbitRPC {
                 SnippetDAO snippetDAO = convertJsonToSnippetDAO(message);
                 Snippet snippet = new Snippet(snippetDAO.getText(), snippetDAO.getExtension(), snippetDAO.getLifetime());
                 snippetService.createSnippet(snippet);
-                response = "localhost:8080/" + snippet.getHash();
+                response = "localhost:8080/snippet/" + snippet.getHash();
             } catch (RuntimeException e) {
                 System.out.println(" [.] " + e);
             } finally {

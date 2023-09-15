@@ -1,5 +1,7 @@
 spring:
+  config:
+    import: optional:file:.env[.properties]
   data:
     mongodb:
-      uri: mongodb+srv://wienfolio:R3HQYIyvVorEENcg@cluster0.zkiwqho.mongodb.net/?retryWrites=true&w=majority
-      database: nub
+      uri: ${MONGODB_URI}
+      database: ${MONGODB_DATABASE}
